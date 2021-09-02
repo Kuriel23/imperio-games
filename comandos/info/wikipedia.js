@@ -3,7 +3,7 @@ const wiki = require('wikipedia');
 
 module.exports = {
   name: "wikipedia",
-  description: "",
+  description: "Visualize informações na Wikipedia",
   aliases: ["wiki"]
 }
 

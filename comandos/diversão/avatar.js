@@ -3,7 +3,7 @@ const { MessageButton, MessageActionRow } = require("discord-buttons");
 
 module.exports = {
   name: "avatar",
-  description: "",
+  description: "Visualize seu avatar ou de alguma pessoa",
   aliases: []
 };
 

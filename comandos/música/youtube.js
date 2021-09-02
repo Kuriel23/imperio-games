@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports = {
   name: "youtube",
-  description: "",
+  description: "Veja Youtube com seus amigos!",
   aliases: []
 };
 

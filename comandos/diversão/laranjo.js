@@ -3,7 +3,7 @@ const Canvas = require("canvas");
 
 module.exports = {
   name: "laranjo",
-  description: "",
+  description: "Faça o laranjo falar algo.",
   aliases: []
 };
 

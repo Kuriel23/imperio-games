@@ -3,7 +3,8 @@ const Discord = require("discord.js");
 module.exports = {
   name: "manutenção",
   description: "",
-  aliases: ["manutencao"]
+  aliases: ["manutencao"],
+  oculto: true
 }
 
 module.exports.run = async (client, message, res) => {

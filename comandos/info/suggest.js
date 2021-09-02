@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports = {
   name: "suggest",
-  description: "",
+  description: "Sugira coisas para minha staff melhorar!",
   aliases: ["sugestão", "sugestao"]
 }
 

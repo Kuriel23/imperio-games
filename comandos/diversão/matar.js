@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports = {
   name: "matar",
-  description: "",
+  description: "Mate a pessoa que você mais odeia neste momento.",
   aliases: ["kill"]
 };
 

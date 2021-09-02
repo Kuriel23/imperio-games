@@ -13,10 +13,6 @@ const UserSchema = new Schema({
     mutes: { type: Array, default: [] },
     autobot: { type: Array, default: [] }
   },
-  biografia: {
-    type: String,
-    default: "Não definida. Use o comando a?biografia <bio> para definir."
-  }
 });
 
 const BaninfoSchema = new Schema({

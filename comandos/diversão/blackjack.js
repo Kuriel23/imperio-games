@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports = {
   name: "blackjack",
-  description: "",
+  description: "Jogue Blackjack, quem será que ganha?",
   aliases: ["21"]
 };
 

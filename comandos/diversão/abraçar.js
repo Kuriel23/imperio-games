@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports = {
   name: "abraçar",
-  description: "",
+  description: "Abrace alguém!",
   aliases: ["hug", "abraço"]
 }
 

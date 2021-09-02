@@ -3,7 +3,7 @@ const canvacord = require("canvacord");
 
 module.exports = {
   name: "triggered",
-  description: "",
+  description: "Eita bixo! Ele está bravinho!",
   aliases: []
 };
 

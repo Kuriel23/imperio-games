@@ -4,7 +4,8 @@ const { inspect } = require("util");
 module.exports = {
   name: "eval",
   description: "",
-  aliases: []
+  aliases: [],
+  oculto: true
 }
 
 module.exports.run = async (client, message, res) => {

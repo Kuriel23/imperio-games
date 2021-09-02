@@ -126,7 +126,7 @@ function handleNewsGames() {
     .then(data => {
       if (client.db2.fetch(`postedGames`).includes(data.items[0].link)) return;
       else {
-        client.channels.cache.get("670760689912119336").send(
+        client.channels.cache.get("597174530812805121").send(
           `${data.items[0].title} <@&727270078789189652>\n${data.items[0].link}`
           );
         client.db2.set(`GamesData`, data.items[0]);

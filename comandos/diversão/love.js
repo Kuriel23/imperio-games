@@ -3,7 +3,7 @@ const superagent = require("superagent");
 
 module.exports = {
   name: "love",
-  description: "",
+  description: "Veja se o amor está no ar.",
   aliases: ["amor"]
 };
 

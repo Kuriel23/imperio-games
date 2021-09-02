@@ -3,7 +3,7 @@ const petPetGif = require("pet-pet-gif");
 
 module.exports = {
   name: "petpet",
-  description: "",
+  description: "Olha que coisa fofa!!",
   aliases: []
 };
 

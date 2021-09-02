@@ -4,7 +4,7 @@ const { MessageButton, MessageActionRow } = require("discord-buttons");
 
 module.exports = {
   name: "dog",
-  description: "",
+  description: "Visualize cachorros!",
   aliases: ["cão", "cachorro", "cao"]
 };
 

@@ -4,7 +4,8 @@ const { MessageButton, MessageActionRow } = require('discord-buttons');
 module.exports = {
   name: "addemoji",
   description: "",
-  aliases: []
+  aliases: [],
+  oculto: true
 }
 
 module.exports.run = async (client, message, res) => {

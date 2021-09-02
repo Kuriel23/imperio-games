@@ -14,6 +14,6 @@ module.exports.run = async (member, client) => {
   .setAuthor(`» ${member.user.tag} saiu do servidor! :(`, "https://image.flaticon.com/icons/png/128/1348/1348448.png")
   .setColor(client.cor)
   
-  member.guild.channels.cache.get("868262491107504149").send(MembroSaiuEmbed);
+  member.guild.channels.cache.get("600292633285361694").send(MembroSaiuEmbed);
 
 };

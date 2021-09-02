@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 
 module.exports = {
   name: "ping",
-  description: "",
+  description: "Veja se estou rápido, ou se a minha máquina está lenta.",
   aliases: ["pong"]
 }
 
