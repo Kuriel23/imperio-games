@@ -18,7 +18,7 @@ module.exports.run = async (member, client) => {
     )
     .setImage(respostas[resultado])
     .setColor(client.cor).setTimestamp()
-  member.guild.channels.cache.get("600300473848823809").send("<@" + member.user + ">", { embed: MembroEntrouEmbed, component: row });
+  member.guild.channels.cache.get("600300473848823809").send("<@" + member.user + ">", MembroEntrouEmbed);
 
     var emojis = [
     "<:um:882972801236078603>",

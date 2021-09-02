@@ -24,6 +24,7 @@ const {PlayTogether} = require('@miudiscord/together')
 
 // [ - CLIENT ASSETS ]
 
+client.canais = JSON.parse(process.env.canais)
 client.together = new PlayTogether(client);
 client.commands = new Discord.Collection();
 client.db = require("./database.js");
@@ -78,6 +79,7 @@ client.on("ready", async () => {
   setInterval(() => {
     handleUploads();
     handleNewsGames();
+    handleNewsAnimes();
   }, 60000);
   let activities = [
       `Prefixos: i!, i., i?`,
@@ -112,7 +114,7 @@ function handleUploads() {
           "https://youtu.be/"
         );
         client.channels.cache
-          .get("711215124454703104")
+          .get(client.canais.youtube)
           .send(linkyt);
       }
     });
@@ -126,11 +128,28 @@ function handleNewsGames() {
     .then(data => {
       if (client.db2.fetch(`postedGames`).includes(data.items[0].link)) return;
       else {
-        client.channels.cache.get("597174530812805121").send(
-          `${data.items[0].title} <@&727270078789189652>\n${data.items[0].link}`
+        client.channels.cache.get(client.canais.games).send(
+          `**${data.items[0].title}** <@&727270078789189652>\n${data.items[0].link}`
           );
         client.db2.set(`GamesData`, data.items[0]);
         client.db2.push("postedGames", data.items[0].link);
+      }
+    });
+}
+
+function handleNewsAnimes() {
+  client.request
+    .parseURL(
+      `https://www.imperioanimes.ml/feeds/posts/default`
+    )
+    .then(data => {
+      if (client.db2.fetch(`postedAnimes`).includes(data.items[0].link)) return;
+      else {
+        client.channels.cache.get(client.canais.animes).send(
+          `**${data.items[0].title}** \n\n${data.items[0].link}`
+          );
+        client.db2.set(`AnimesData`, data.items[0]);
+        client.db2.push("postedAnimes", data.items[0].link);
       }
     });
 }
