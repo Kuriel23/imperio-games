@@ -104,8 +104,9 @@ function handleUploads() {
       `https://www.youtube.com/feeds/videos.xml?channel_id=UCL7PC_sP5Rc3uUEao4FwJ4Q`
     )
     .then(data => {
-      if (client.db2.fetch(`postedVideos`).includes(data.items[0].link)) return;
+      if (client.db2.fetch(`postedVideos`).includes(data.items[0].link)) return 0;
       else {
+        if (client.db2.fetch(`postedVideos`).includes(data.items[0].link)) return 0;
         client.db2.set(`videoData`, data.items[0]);
         client.db2.push("postedVideos", data.items[0].link);
         let parsed = client.db2.fetch(`videoData`);
@@ -126,8 +127,9 @@ function handleNewsGames() {
       `https://imperiogames.ml/feed`
     )
     .then(data => {
-      if (client.db2.fetch(`postedGames`).includes(data.items[0].link)) return;
+      if (client.db2.fetch(`postedGames`).includes(data.items[0].link)) return 0;
       else {
+        if (client.db2.fetch(`postedGames`).includes(data.items[0].link)) return 0;
         client.channels.cache.get(client.canais.games).send(
           `**${data.items[0].title}** <@&727270078789189652>\n${data.items[0].link}`
           );
@@ -143,8 +145,9 @@ function handleNewsAnimes() {
       `https://www.imperioanimes.ml/feeds/posts/default`
     )
     .then(data => {
-      if (client.db2.fetch(`postedAnimes`).includes(data.items[0].link)) return;
+      if (client.db2.fetch(`postedAnimes`).includes(data.items[0].link)) return 0;
       else {
+        if (client.db2.fetch(`postedAnimes`).includes(data.items[0].link)) return 0;
         client.channels.cache.get(client.canais.animes).send(
           `**${data.items[0].title}** \n\n${data.items[0].link}`
           );
