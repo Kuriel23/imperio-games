@@ -100,7 +100,8 @@ function handleNewsAnimes() {
       `https://www.imperioanimes.ml/feeds/posts/default`
     )
     .then(data => {
-      if (client.db2.fetch(`postedAnimes`).includes(data.items[0].link)) return 0;
+      let f = client.db2.fetch(`postedAnimes`).includes(data.items[0].link)
+      if (f) return 0;
       else {
         client.channels.cache.get(client.canais.animes).send(
           `**${data.items[0].title}** \n\n${data.items[0].link}`

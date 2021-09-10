@@ -7,7 +7,6 @@ module.exports.run = async (message, client) => {
   if (message.author.bot) return 0;
 
   const Discord = require('discord.js')
-  const {Webhook} = require('simple-discord-webhooks');
   
   if (message.author.id === client.user.id) return;
   client.emit("checkMessage", message);
