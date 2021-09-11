@@ -4,6 +4,11 @@ module.exports = {
 }
 
 module.exports.run = async (message, client) => {
+
+  if (message.channel.type === "news") {
+    message.crosspost()
+  }
+
   if (message.author.bot) return 0;
 
   const Discord = require('discord.js')
