@@ -81,8 +81,8 @@ client.on("ready", async () => {
   }, 60000);
   let activities = [
       `Prefixos: i!, i., i?`,
-      `imperiogames.ml`,
-      `www.imperioanimes.ml`
+      `imperionetwork.ml`,
+      `www.imperionetwork.ml`
     ],
     i = 0;
   setInterval(
