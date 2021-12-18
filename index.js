@@ -99,8 +99,8 @@ function handleNewsAnimes() {
     .parseURL(
       `https://www.imperioanimes.ml/feeds/posts/default`
     )
-    .then(data => {
-      let f = client.db2.fetch(`postedAnimes`).includes(data.items[0].link)
+    .then(async data => {
+      let f = await client.db2.fetch(`postedAnimes`).includes(data.items[0].link)
       if (f) return 0;
       else {
         client.channels.cache.get(client.canais.animes).send(
