@@ -97,7 +97,7 @@ client.on("ready", async () => {
 function handleNewsAnimes() {
   client.request
     .parseURL(
-      `https://www.imperioanimes.ml/feeds/posts/default`
+      `https://imperionetwork.ml/feed`
     )
     .then(async data => {
       let f = await client.db2.fetch(`postedAnimes`).includes(data.items[0].link)
