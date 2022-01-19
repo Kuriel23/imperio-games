@@ -78,6 +78,7 @@ for (const file of events) {
 client.on("ready", async () => {
   setInterval(() => {
     handleNewsAnimes();
+	//handleTwitter();
   }, 60000);
   let activities = [
       `Prefixos: i!, i., i?`,
@@ -94,22 +95,39 @@ client.on("ready", async () => {
   );
 });
 
-function handleNewsAnimes() {
+async function handleNewsAnimes() {
+  const doc = await client.db.News.findOne({_id: "1"});
   client.request
     .parseURL(
       `https://imperionetwork.ml/feed`
     )
-    .then(async data => {
-      let f = await client.db2.fetch(`postedAnimes`).includes(data.items[0].link)
-      if (f) return 0;
-      else {
-        client.channels.cache.get(client.canais.animes).send(
-          `**${data.items[0].title}** \n\n${data.items[0].link}`
-          );
-        client.db2.set(`AnimesData`, data.items[0]);
-        client.db2.push("postedAnimes", data.items[0].link);
-      }
+    .then(data => {
+      if (doc.newsdata.includes(data.items[0].link)) return 0;
+	  const scrape = require("metadata-parser");
+	  scrape(data.items[0].link).then(function(metadata) {let img = metadata.openGraph.image.url
+      client.channels.cache.get(client.canais.animes).send("<@&727270078789189652>", new Discord.MessageEmbed().setAuthor(" » Clique para ler", "https://imperionetwork.ml/wp-content/uploads/2021/12/wp-min.png", data.items[0].link).setTitle("📰 Nova Notícia").addField("Título:", data.items[0].title).setImage(img).setTimestamp().setColor(client.cor)
+      );
+      doc.newsdata = data.items[0].link
+      doc.save();
     });
+	});
+}
+
+async function handleTwitter() {
+  const doc = await client.db.News.findOne({_id: "1"});
+  client.request
+    .parseURL(
+      `https://rsshub.app/twitter/user/imp3rionetwork/`
+    )
+    .then(data => {
+      if (doc.twitterdata.includes(data.items[0].link)) return 0;
+	  const scrape = require("metadata-parser");
+	  scrape(data.items[0].link).then(function(metadata) {let img = metadata.openGraph.image.url
+      client.channels.cache.get(client.canais.twitter).send(data.items[0].link);
+      doc.twitterdata = data.items[0].link
+      doc.save();
+    });
+	});
 }
 
 // [ - LOGIN ]

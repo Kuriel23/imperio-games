@@ -8,7 +8,7 @@ module.exports.run = async (member, client) => {
   const { MessageButton, MessageActionRow } = require('discord-buttons');
   const Discord = require("discord.js");
   
-  if (member.guild.id != "531574473644703744") return;
+  if (member.guild.id != "597137568605274112") return;
   if (member.user.bot) return;
   
       let MembroEntrouEmbed = new Discord.MessageEmbed()
@@ -16,15 +16,14 @@ module.exports.run = async (member, client) => {
     .setDescription(
       "» Veja as <#598517985782792193>!\n» Caso queira ser notificado de notícias, vá em <#719496218090405968>, basta clicar nas reações e divirta-se no nosso servidor!"
     )
-    .setImage(respostas[resultado])
-    .setColor(client.cor).setTimestamp()
+    .setColor(client.cor).setTimestamp().setImage("https://acegif.com/wp-content/uploads/2021/4fh5wi/bemvindo-16.gif")
   member.guild.channels.cache.get("600300473848823809").send("<@" + member.user + ">", MembroEntrouEmbed);
 
     var emojis = [
     "<:um:882972801236078603>",
     "<:dois:882972801722634310>",
-    "<:tres:882972801122840577>",
     "<:quatro:882972801600983060>",
+    "<:tres:882972801122840577>",
     "<:cinco:882972801458405446>",
     "<:seis:882972801466785852>",
     "<:sete:882972801437417512>",
@@ -40,6 +39,6 @@ module.exports.run = async (member, client) => {
     var index = numeros.indexOf(array[i]);
     x = x + emojis[index];
   }
-  member.guild.channels.cache.get("600300473848823809").setTopic("O servidor possui " + x + " gamers/otakus | imperiogames.ml", "Culpa do: "+ member.user.tag);
+  member.guild.channels.cache.get("600300473848823809").setTopic("O servidor possui " + x + " gamers/otakus | imperionetwork.ml", "Culpa do: "+ member.user.tag);
 
 };

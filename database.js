@@ -24,5 +24,12 @@ const BaninfoSchema = new Schema({
   provas: { type: Array, default: [] }
 });
 
+const NewsSchema = new Schema({
+  _id: { type: String, required: true },
+  newsdata: { type: String, default: "" },
+  twitterdata: { type: String, default: "" },
+});
+
 module.exports.BanInfo = model("BanInfo", BaninfoSchema);
 module.exports.Users = model("Users", UserSchema);
+module.exports.News = model("News", NewsSchema)
